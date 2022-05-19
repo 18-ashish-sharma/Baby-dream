@@ -12,6 +12,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Ourstory() {
     return (
@@ -26,7 +27,7 @@ function Ourstory() {
                         <div class="d-flex justify-content-between align-items-center">
                             <h2>Our Story</h2>
                             <ol>
-                                <li><a href="index.html">Home</a></li>
+                                <li><Link to="/" className="active">Home</Link></li>
                                 <li>Our Story</li>
                             </ol>
                         </div>

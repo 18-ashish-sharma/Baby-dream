@@ -15,6 +15,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Gallery() {
     return (
@@ -29,7 +30,7 @@ function Gallery() {
                         <div class="d-flex justify-content-between align-items-center">
                             <h2>Gallery</h2>
                             <ol>
-                                <li><a href="index.html">Home</a></li>
+                                <li><Link to="/" className="active">Home</Link></li>
                                 <li>Gallery</li>
                             </ol>
                         </div>
