@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-redundant-roles */
-/* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/style-prop-object */
 import React from 'react';
 import Iframe from 'react-iframe';
