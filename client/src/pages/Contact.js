@@ -2,27 +2,11 @@
 /* eslint-disable react/style-prop-object */
 import React from 'react';
 import Iframe from 'react-iframe';
-import { Link } from 'react-router-dom';
 
 function Contact() {
   return (
     <div>
       <main id="main">
-
-        <section id="breadcrumbs" className="breadcrumbs">
-          <div className="container">
-
-            <div className="d-flex justify-content-between align-items-center">
-              <h2>Contact</h2>
-              <ol>
-                <li><Link to="/" className="active">Home</Link></li>
-                <li>Contact</li>
-              </ol>
-            </div>
-
-          </div>
-        </section>
-
         <section id="contact-us" className="contact-us">
           <div className="container">
 

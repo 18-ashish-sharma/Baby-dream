@@ -35,3 +35,15 @@ export const Col = styled.div`
   border: ${(props) => (props.border)}px solid black;
   margin-left: ${(props) => props.ml || 0};
 `;
+
+export const LoaderDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 20;
+`;

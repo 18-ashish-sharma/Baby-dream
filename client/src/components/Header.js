@@ -1,30 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Nav, Navbar } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import {
+  Icon,
+  NavContainer,
+  NavWrapper,
+} from './style-components/Header.style';
 
 function Header() {
   return (
-    <div>
-      <header id="header" className="fixed-top">
-        <div className="container d-flex align-items-center justify-content-between">
-          <h1 className="logo"><Link to="/" className="active">Me &amp; Family</Link></h1>
-          <nav id="navbar" className="navbar">
-            <ul>
-              <li><Link to="/" className="active">Home</Link></li>
-              <li><Link to="/ourstory" className="">Ourstory</Link></li>
-              <li><Link to="/events" className="">Events</Link></li>
-              <li><Link to="/gallery" className="">Gallery</Link></li>
-              <li><Link to="/contact" className="">Contact</Link></li>
-
-            </ul>
-            <i className="bi bi-list mobile-nav-toggle" />
-          </nav>
-
-        </div>
-      </header>
-
-    </div>
+    <NavContainer>
+      <Navbar fixed="" collapseOnSelect expand="lg">
+        <Navbar.Brand href="#home">
+          {/* <Logo /> */}
+          <Icon>
+            <img src="assets/images/pink7.svg" alt="pink7" />
+          </Icon>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <NavWrapper>
+            <Nav>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="ourstory">Ourstory</Nav.Link>
+              <Nav.Link href="events">Events</Nav.Link>
+              <Nav.Link href="gallery">Gallery</Nav.Link>
+              <Nav.Link href="contact">Contact</Nav.Link>
+              <Nav.Link href="login">Login</Nav.Link>
+            </Nav>
+          </NavWrapper>
+        </Navbar.Collapse>
+      </Navbar>
+    </NavContainer>
 
   );
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.loader.isLoggedIn,
+  userData: state.loader.userData,
+});
+export default connect(mapStateToProps, null)(Header);

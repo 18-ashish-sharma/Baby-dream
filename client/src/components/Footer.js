@@ -1,43 +1,79 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable max-len */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/jsx-indent */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
 function Footer() {
   return (
-        <div>
-            <footer id="footer">
-                <div className="container">
-                    <h3>MeFamily</h3>
-                    <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-                    <div className="social-links">
-                        <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                        <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                        <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                        <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                        <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-                    </div>
-                    <div className="copyright">
-                        &copy; Copyright 
-{' '}
-<strong><span>MeFamily</span></strong>
-. All Rights Reserved
-                    </div>
-                    <div className="credits">
-                        {/* <!-- All the links in the footer should remain intact. --> */}
-                        {/* <!-- You can delete the links only if you purchased the pro version. --> */}
-                        {/* <!-- Licensing information: https://bootstrapmade.com/license/ --> */}
-                        {/* <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ --> */}
-                        Designed by 
-{' '}
-<a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
-                </div>
-            </footer>
+    <div>
+      <footer className="footer">
+        <div className="container">
+          <div className="row">
+            <div className="footer-about">
+              <div className="footer-logo">
+                <img src="assets/images/pink7.svg" alt="pink7" />
+              </div>
+              <p>
+                Pink7 is a leading agency for brand promotion,
+                connecting millions of customers with the
+                merchant.
+
+              </p>
+            </div>
+            <div className="quick-links">
+              <h2>Explore</h2>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About Us</a></li>
+                <li><a href="/">Contact</a></li>
+              </ul>
+            </div>
+            <div className="policy">
+              <h2>Explore</h2>
+              <ul>
+                <li><a href="/">Register with Us</a></li>
+                <li>
+                  <a href="/">
+                    Privacy Policy
+                  </a>
+
+                </li>
+                <li><a href="/">Terms of Services</a></li>
+              </ul>
+            </div>
+            <div className="get-connect">
+              <h2>Get Connect</h2>
+              <p>
+                Are we friends on social media yet? Use the
+                bottom below to connect,then join my list to your
+                right.
+
+              </p>
+              <div className="social-links">
+                <a href="/"><i className="fa-brands fa-whatsapp" /></a>
+                <a href="/"><i className="fa-brands fa-facebook-f" /></a>
+                <a href="/"><i className="fa-brands fa-twitter" /></a>
+                <a href="/"><i className="fa-brands fa-instagram" /></a>
+                <a href="/"><i className="fa-brands fa-youtube" /></a>
+                <a href="/"><i className="fa-brands fa-linkedin" /></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </footer>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="bottom">
+            <p className="text my-1">
+              &copy; 2020 All Rights Reserved Terms of Use and Privacy Policy
+              <i
+                className="fa fa-heart"
+                aria-hidden="true"
+              />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   );
 }

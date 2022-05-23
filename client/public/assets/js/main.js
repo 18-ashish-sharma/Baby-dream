@@ -1,197 +1,94 @@
-/**
-* Template Name: MeFamily - v4.7.0
-* Template URL: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
-  "use strict";
+var checkboxes = document.querySelectorAll('input.subOption'),
+  checkall = document.getElementById('option');
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
+for (var i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].onclick = function () {
+    var checkedCount = document.querySelectorAll('input.subOption:checked').length;
+
+    checkall.checked = checkedCount > 0;
+    checkall.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length;
+  }
+}
+
+checkall.onclick = function () {
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = this.checked;
+  }
+}
+
+$('.toggler').click(function () {
+  $('.navigation').addClass('slide');
+});
+$('.close-btn').click(function () {
+  $('.navigation').removeClass('slide');
+});
+
+$('.feature-carousel').owlCarousel({
+  margin: 15,
+  loop: true,
+  nav: true,
+  dots: false,
+  autoplay: false,
+  autoplayTimeout: 4000,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    640: {
+      items: 2,
+    },
+    800: {
+      items: 2,
+    },
+    1140: {
+      items: 3
     }
   }
+});
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
-
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 16
-    }
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
-
-  /**
-   * Hero carousel indicators
-   */
-  let heroCarouselIndicators = select("#hero-carousel-indicators")
-  let heroCarouselItems = select('#heroCarousel .carousel-item', true)
-
-  heroCarouselItems.forEach((item, index) => {
-    (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-  });
-
-  /**
-   * Clients Slider
-   */
-  new Swiper('.recent-photos-slider', {
-    speed: 400,
+// Clients carousel (uses the Owl Carousel library)
+  $(".clients-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
     loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
+    responsive: {
+      0: {
+        items: 2
       },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20
+      768: {
+        items: 4
       },
-      992: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      1200: {
-        slidesPerView: 5,
-        spaceBetween: 20
+      900: {
+        items: 6
       }
     }
   });
 
-  /**
-   * Gallery isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let galelryContainer = select('.gallery-container');
-    if (galelryContainer) {
-      let galleryIsotope = new Isotope(galelryContainer, {
-        itemSelector: '.gallery-item',
-      });
-
-      let galleryFilters = select('#gallery-flters li', true);
-
-      on('click', '#gallery-flters li', function(e) {
-        e.preventDefault();
-        galleryFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        galleryIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+  /* Our Clients Says owl-carousel  */
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 3500,
+            autoplayHoverPause: false
         });
 
-      }, true);
-    }
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
 
-  });
 
-  /**
-   * Initiate glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-})()
+  

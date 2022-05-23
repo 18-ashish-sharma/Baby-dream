@@ -1,156 +1,138 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Gallery() {
   return (
     <div>
       <main id="main">
-        <section id="breadcrumbs" className="breadcrumbs">
-          <div className="container">
-
-            <div className="d-flex justify-content-between align-items-center">
-              <h2>Gallery</h2>
-              <ol>
-                <li><Link to="/" className="active">Home</Link></li>
-                <li>Gallery</li>
-              </ol>
-            </div>
-
-          </div>
-        </section>
         <section id="gallery" className="gallery">
           <div className="container">
-
-            <div className="row">
-              <div className="col-lg-12 d-flex justify-content-center">
-                <ul id="gallery-flters">
-                  <li data-filter="*" className="filter-active">All</li>
-                  <li data-filter=".filter-home">Home</li>
-                  <li data-filter=".filter-beach">Beach</li>
-                  <li data-filter=".filter-vacation">Vacation</li>
-                </ul>
+            <div className="grid-wrapper">
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
+                  alt=""
+                />
               </div>
-            </div>
-
-            <div className="row gallery-container">
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-home">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/home-1.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Home 1</h4>
-                    <p>Home</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/home-1.jpg" label className="glightbox" title="Home 1"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1588282322673-c31965a75c3e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1351&amp;q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-vacation">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/vacation-2.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Vacation 2</h4>
-                    <p>Vacation</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/vacation-2.jpg" label className="glightbox" title="Vacation 2"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="tall">
+                <img
+                  src="https://images.unsplash.com/photo-1588117472013-59bb13edafec?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-home">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/home-2.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Home 2</h4>
-                    <p>Home</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/home-2.jpg" label className="glightbox" title="Home 2"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="wide">
+                <img
+                  src="https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-beach">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/beach-2.jpg" label className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Beach 2</h4>
-                    <p>Beach</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/beach-2.jpg" label className="glightbox" title="Beach 2"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <img
+                  src=" https://images.unsplash.com/photo-1558980663-3685c1d673c4?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=60"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-vacation">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/vacation-1.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Vacation 1</h4>
-                    <p>Vacation</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/vacation-1.jpg" label className="glightbox" title="Vacation 1"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="tall">
+                <img
+                  src="https://images.unsplash.com/photo-1588499756884-d72584d84df5?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-home">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/home-3.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Home 3</h4>
-                    <p>Home</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/home-3.jpg" label className="glightbox" title="Home 3"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="big">
+                <img
+                  src="https://images.unsplash.com/photo-1588492885706-b8917f06df77?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-beach">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/beach-1.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Beach 1</h4>
-                    <p>Beach</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/beach-1.jpg" label className="glightbox" title="Beach 1"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1588247866001-68fa8c438dd7?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=564&amp;q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-beach">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/beach-3.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Beach 3</h4>
-                    <p>Beach</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/beach-3.jpg" label className="glightbox" title="Beach 3"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="wide">
+                <img
+                  src="https://images.unsplash.com/photo-1586521995568-39abaa0c2311?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
+                  alt=""
+                />
               </div>
-
-              <div className="col-lg-4 col-md-6 gallery-item filter-vacation">
-                <div className="gallery-wrap">
-                  <img src="assets/img/gallery/vacation-3.jpg" className="img-fluid" alt="" />
-                  <div className="gallery-info">
-                    <h4>Vacation 3</h4>
-                    <p>Vacation</p>
-                    <div className="gallery-links">
-                      <a href="assets/img/gallery/vacation-3.jpg" label className="glightbox" title="Vacation 3"><i className="bx bx-plus" /></a>
-                    </div>
-                  </div>
-                </div>
+              <div className="big">
+                <img
+                  src="https://images.unsplash.com/photo-1572914857229-37bf6ee8101c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                  alt=""
+                />
               </div>
-
+              <div className="tall">
+                <img
+                  src="https://images.unsplash.com/photo-1588453862014-cd1a9ad06a12?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1588414734732-660b07304ddb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1588224575346-501f5880ef29?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1574798834926-b39501d8eda2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1547234935-80c7145ec969?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1353&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div className="wide">
+                <img
+                  src="https://images.unsplash.com/photo-1588263823647-ce3546d42bfe?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1587732608058-5ccfedd3ea63?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1587897773780-fe72528d5081?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div className="wide">
+                <img
+                  src="https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1587572236558-a3751c6d42c0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
+                  alt=""
+                />
+              </div>
+              <div className="wide">
+                <img
+                  src="https://images.unsplash.com/photo-1583542225715-473a32c9b0ef?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
+                  alt=""
+                />
+              </div>
             </div>
 
           </div>
