@@ -1,4 +1,4 @@
-import postApi from '../../service_methods/post_method';
+// import postApi from '../../service_methods/post_method';
 import {
   API_REQUEST,
   ON_COMPLETE,
@@ -28,18 +28,19 @@ export const LoginFailure = (payload) => ({
   payload,
 });
 
-export const login = (url, payload) => (dispatch) => {
-  dispatch(apiRequest());
+export const login = (url, payload) => () => {
+  // dispatch(apiRequest());
   const { username } = payload;
   const msg = `Welcome back ${username}`;
-  setTimeout(() => {
-    postApi(url, payload, msg)
-      .then((res) => {
-        // console.log(res.data);
-        dispatch(loginSuccess(res.data));
-      })
-      .catch((err) => dispatch(LoginFailure(err)));
-  }, 0);
+  console.log(url, username, msg);
+  // setTimeout(() => {
+  //   postApi(url, payload, msg)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       dispatch(loginSuccess(res.data));
+  //     })
+  //     .catch((err) => dispatch(LoginFailure(err)));
+  // }, 0);
 };
 
 export const signUpSuccess = (payload) => ({
@@ -52,12 +53,13 @@ export const signUpFailure = (payload) => ({
   payload,
 });
 
-export const signUp = (url, payload) => (dispatch) => {
-  dispatch(apiRequest());
-  const msg = 'Welcome to Jesus Heals Physiotherapy';
-  postApi(url, payload, msg)
-    .then((res) => {
-      dispatch(signUpSuccess(res.data.data));
-    })
-    .catch((err) => dispatch(signUpFailure(err)));
+export const signUp = (url, payload) => () => {
+  // dispatch(apiRequest());
+  const msg = 'Welcome to Pink Family';
+  console.log(url, payload, msg);
+  // postApi(url, payload, msg)
+  //   .then((res) => {
+  //     dispatch(signUpSuccess(res.data));
+  //   })
+  //   .catch((err) => dispatch(signUpFailure(err)));
 };

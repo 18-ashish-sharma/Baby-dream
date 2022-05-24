@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -5,13 +6,17 @@ import {
   Button, Col, Form, Row,
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { login } from '../redux/actions';
+import { signUp } from '../redux/actions';
 
-function LoginPage({ login, isLoggedIn }) {
+function Signup({ signUp, isLoggedIn }) {
   const navigate = useNavigate();
   const [state, setState] = useState({
-    password: '',
     username: '',
+    mobile: '',
+    email: '',
+    password: '',
+    dob: '',
+
   });
   function handleChange(e) {
     setState({
@@ -21,8 +26,8 @@ function LoginPage({ login, isLoggedIn }) {
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    const url = 'http://localhost:8080/api/auth/signin';
-    login(url, state);
+    const url = 'http://localhost:8080/api/auth/signup';
+    signUp(url, state);
     setTimeout(() => {
       navigate('/');
     }, 1000);
@@ -50,6 +55,28 @@ function LoginPage({ login, isLoggedIn }) {
               value={state.username}
             />
           </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              onChange={(e) => handleChange(e)}
+              value={state.email}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Mobile Number</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Mobile Number"
+              name="mobile"
+              onChange={(e) => handleChange(e)}
+              value={state.mobile}
+            />
+          </Form.Group>
+
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -60,11 +87,22 @@ function LoginPage({ login, isLoggedIn }) {
               value={state.password}
             />
           </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>DOB</Form.Label>
+            <Form.Control
+              type="date"
+              placeholder="Enter Date Of Birth"
+              name="dob"
+              onChange={(e) => handleChange(e)}
+              value={state.dob}
+            />
+          </Form.Group>
+
           {
            isLoggedIn
              ? (
                <Button variant="success btn-block" type="submit" onClick={handleSubmit}>
-                 Login
+                 Signup
                </Button>
              )
              : (
@@ -76,9 +114,9 @@ function LoginPage({ login, isLoggedIn }) {
           <br />
           <br />
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>New user?</Form.Label>
+            <Form.Label>Already Sign up?</Form.Label>
             <br />
-            <Link to="/signup" className="">Sign Up</Link>
+            <Link to="/login" className="">Login</Link>
           </Form.Group>
         </Form>
       </Col>
@@ -87,10 +125,10 @@ function LoginPage({ login, isLoggedIn }) {
 }
 
 const mapDispatchToProps = {
-  login,
+  signUp,
 };
 const mapStateToProps = (state) => ({
   isLoggedIn: state.loader.isLoggedIn,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

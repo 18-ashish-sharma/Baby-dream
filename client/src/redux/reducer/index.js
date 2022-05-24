@@ -20,12 +20,12 @@ const tasks = (state = initialState, action) => {
     case API_REQUEST:
       return {
         ...state,
-        isLoading: payload,
+        isLoading: true,
       };
     case ON_COMPLETE:
       return {
         ...state,
-        isLoading: payload,
+        isLoading: false,
       };
     case LOGIN_SUCCESS:
       return {

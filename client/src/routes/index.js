@@ -8,6 +8,7 @@ import Ourstory from '../pages/Ourstory';
 import Contact from '../pages/Contact';
 import Events from '../pages/Events';
 import Gallery from '../pages/Gallery';
+import Signup from '../pages/Signup';
 
 import { LoaderDiv } from '../components/style-components/Grid.style';
 import Gif from '../components/images/gif3.gif';
@@ -31,6 +32,7 @@ function Routing({ isLoading }) {
         <Route exact path="/gallery" element={<Gallery />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </Row>
   );
