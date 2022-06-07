@@ -6,6 +6,7 @@ import {
   LOGIN_FAIL,
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
+  LOGOUT,
 } from '../action_types';
 
 export const apiRequest = () => ({
@@ -63,3 +64,8 @@ export const signUp = (url, payload) => () => {
   //   })
   //   .catch((err) => dispatch(signUpFailure(err)));
 };
+
+export const logoutPage = (payload) => ({
+  type: LOGOUT,
+  payload,
+});

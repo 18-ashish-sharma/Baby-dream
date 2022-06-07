@@ -4,3 +4,4 @@ export const LOGIN_SUCCESS = 'LOGIN SUCCESS';
 export const LOGIN_FAIL = 'LOGIN FAIL';
 export const SIGNUP_SUCCESS = 'SIGNUP SUCCESS';
 export const SIGNUP_FAIL = 'SIGNUP FAIL';
+export const LOGOUT = 'LOGOUT';
